@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="743945d3983c41c48b989eb29e538c7c" Name="Diagram1">
+        <EntityTypeShape EntityType="Houses_WiKiModel.Auth" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.Person" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.Role" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Auth_Person1" ManuallyRouted="false" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Auth_Role" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.Balki_House" Width="1.5" PointX="5.375" PointY="34.5" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.Door_For_House" Width="1.5" PointX="5.375" PointY="26.375" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.Drain_For_Home" Width="1.5" PointX="5.375" PointY="37.25" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.Home" Width="1.5" PointX="7.625" PointY="1.125" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.House_Basement_Cokol_" Width="1.5" PointX="5.375" PointY="12.875" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.House_Facade" Width="1.5" PointX="5.375" PointY="15.625" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.House_Steps" Width="1.5" PointX="5.375" PointY="23.625" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.House_Windows" Width="1.5" PointX="5.375" PointY="7.375" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.Pavers_House" Width="1.5" PointX="5.375" PointY="20.875" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.Plaster_for_the_house" Width="1.5" PointX="5.375" PointY="3.625" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.Railing_For_Home" Width="1.5" PointX="5.375" PointY="10.125" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.Roof_of_the_house" Width="1.5" PointX="5.375" PointY="29" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.Terrace_Home" Width="1.5" PointX="5.375" PointY="31.75" />
+        <EntityTypeShape EntityType="Houses_WiKiModel.Turnkey_solution_for_home" Width="1.5" PointX="5.375" PointY="18.375" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_Balki_House" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_Door_For_House" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_Drain_For_Home" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_House_Basement_Cokol_" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_House_Facade" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_House_Steps" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_House_Windows" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_Pavers_House" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_Plaster_for_the_house" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_Railing_For_Home" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_Roof_of_the_house" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_Terrace_Home" />
+        <AssociationConnector Association="Houses_WiKiModel.FK_Home_Turnkey_solution_for_home" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,368 @@
+﻿<Window
+    x:Class="Ychebka3KYRSKrasnov.ThirdBlock"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Ychebka3KYRSKrasnov"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    x:Name="WinThird"
+    Title="ThirdBlock"
+    Background="#DCDCDC"
+    ResizeMode="CanResize"
+    WindowStartupLocation="CenterOwner"
+    WindowState="Maximized"
+    mc:Ignorable="d">
+    <Grid>
+        
+        <ScrollViewer>
+            <Grid x:Name="GridThird">
+                <StackPanel>
+                    <Grid Margin="0,60,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image
+                            x:Name="IMGH1"
+                            Height="400"
+                            Margin="20"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            Source="{Binding Path=Image_Home}" 
+                            Stretch="UniformToFill"/>
+                        <Grid
+                            Panel.ZIndex="1"
+                            Grid.Column="1"
+                            Height="190"
+                            Background="White"
+                            Margin="20,20,20,20"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Stretch">
+                            <StackPanel>
+                                <TextBlock
+                                    Text="Описание"
+                                    TextAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    FontWeight="Bold"
+                                    FontSize="25"/>
+                                <TextBlock
+                                    x:Name="TXTBOPIS"
+                                    Padding="20,5,20,20"
+                                    FontSize="20"
+                                    Background="White"
+                                    Foreground="Black"
+                                    Text="{Binding Path=Opisanie}"
+                                    TextAlignment="Center"
+                                    TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Grid>
+                        <TextBlock
+                            x:Name="TXTBVIBOR"
+                            Panel.ZIndex="1"
+                            Height="190"
+                            Grid.Column="1"
+                            Margin="20,230,20,20"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            FontSize="24"
+                            Foreground="Black"
+                            Background="White"
+                            Padding="20"
+                            Text="Сечас мы с вами будет выбирать что вы хотите чтобы было в вашем доме из этого будет строиться сумма проекта"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap" />
+                        
+                        
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <Border 
+                                Background="White"
+                                Margin="50,10"
+                                CornerRadius="20">
+                                <StackPanel>
+                                    <Image
+                                        x:Name="img1"
+                                        Height="160"
+                                        Margin="10,10,10,0"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Center" 
+                                        Stretch="Uniform"/>
+                                    <ComboBox
+                                        materialDesign:HintAssist.Hint="Крыша"
+                                        Foreground="Black"
+                                        x:Name="cmb1"
+                                        FontSize="25"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="50,10"
+                                        VerticalAlignment="Top"
+                                        DisplayMemberPath="Roof_of_the_house.Roof_Color"
+                                        SelectionChanged="cmb1_SelectionChanged" />
+                                </StackPanel>
+                            </Border>
+
+
+                            <Border
+                                Background="White"
+                                Margin="50,10"
+                                CornerRadius="20">
+                                <StackPanel>
+                                    <Image
+                                        x:Name="img2"
+                                        Height="160"
+                                        Margin="10,10,10,0"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Center" 
+                                        Stretch="Uniform"/>
+                                    <ComboBox
+                                        x:Name="cmb2"
+                                        materialDesign:HintAssist.Hint="Цоколь"
+                                        FontSize="25"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="50,10"
+                                        VerticalAlignment="Top"
+                                        DisplayMemberPath="House_Basement_Cokol_.Basement_Color"
+                                        SelectionChanged="cmb2_SelectionChanged" />
+                                </StackPanel>
+                            </Border>
+
+                            <Border
+                                Background="White"
+                                Margin="50,10"
+                                CornerRadius="20">
+                                <StackPanel>
+                                    <Image
+                                        x:Name="img3"
+                                        Height="160"
+                                        Margin="10,10,10,0"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Center" 
+                                        Stretch="Uniform"/>
+                                    <ComboBox
+                                        x:Name="cmb3"
+                                        materialDesign:HintAssist.Hint="Фасад"
+                                        FontSize="25"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="50,10"
+                                        VerticalAlignment="Top"
+                                        DisplayMemberPath="House_Facade.Facade_Color"
+                                        SelectionChanged="cmb3_SelectionChanged" />     
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1">
+
+
+                            <Border
+                                Background="White"
+                                Margin="50,10"
+                                CornerRadius="20">
+                                <StackPanel>
+                                    <Image
+                                        x:Name="img4"
+                                        Height="160"
+                                        Margin="10,10,10,0"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Center" 
+                                        Stretch="Uniform"/>
+                                    <ComboBox
+                                        x:Name="cmb4"
+                                        materialDesign:HintAssist.Hint="Брусчатка"
+                                        FontSize="25"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="50,10"
+                                        VerticalAlignment="Top"
+                                        DisplayMemberPath="Pavers_House.Pavers_Color"
+                                        SelectionChanged="cmb4_SelectionChanged" />
+                                </StackPanel>
+                            </Border>
+
+
+                            <Border
+                                Background="White"
+                                Margin="50,10"
+                                CornerRadius="20">
+                                <StackPanel>
+                                    <Image
+                                        x:Name="img5"
+                                        Height="160"
+                                        Margin="10,10,10,0"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Center" 
+                                        Stretch="Uniform"/>
+                                    <ComboBox
+                                        x:Name="cmb5"
+                                        materialDesign:HintAssist.Hint="Окна"
+                                        FontSize="25"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="50,10"
+                                        VerticalAlignment="Top"
+                                        DisplayMemberPath="House_Windows.Window_Color"
+                                        SelectionChanged="cmb5_SelectionChanged" />
+                                </StackPanel>
+                            </Border>
+
+
+                            <Border
+                                Background="White"
+                                Margin="50,10"
+                                CornerRadius="20">
+                                <StackPanel>
+                                    <Image
+                                        x:Name="img6"
+                                        Height="160"
+                                        Margin="10,10,10,0"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Center" 
+                                        Stretch="Uniform"/>
+                                    <ComboBox
+                                        x:Name="cmb6"
+                                        materialDesign:HintAssist.Hint="Водостоки"
+                                        FontSize="25"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="50,10"
+                                        VerticalAlignment="Top"
+                                        DisplayMemberPath="Drain_For_Home.Drain_Color"
+                                        SelectionChanged="cmb6_SelectionChanged" />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+
+                        <Border
+                            Grid.Column="2"
+                            CornerRadius="10"
+                            Background="White"
+                            VerticalAlignment="Top"
+                            Margin="0,10,20,0"
+                            Padding="10">
+                            <StackPanel>
+                                <DockPanel HorizontalAlignment="Center">
+                                    <Label
+                                        Content="Цена: "
+                                        Foreground ="Black"
+                                        FontSize="25"
+                                        VerticalAlignment="Center"/>
+                                    <TextBlock
+                                        Text="2 500 000"
+                                        Foreground ="Black"
+                                        FontSize="25"
+                                        VerticalAlignment="Center"/>
+                                    <materialDesign:PackIcon 
+                                        Kind="CurrencyRub" 
+                                        Foreground="Black"
+                                        Width="Auto"
+                                        Height="25"
+                                        VerticalAlignment="Center"/>
+                                </DockPanel>
+                                <Button
+                                    x:Name="btnOfotmitHome"
+                                    Height="Auto"
+                                    FontSize="25"
+                                    Margin="10"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Click="btnOfotmitHome_Click"
+                                    Content="Купить дом" />
+                            </StackPanel>
+                        </Border>
+
+                        <Grid Visibility="Collapsed">
+                            <Label
+                x:Name="LB_ROOF"
+                Grid.Row="4"
+                Grid.Column="1"
+                Margin="215,132,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Крыша"
+                Foreground="White" />
+                            <Label
+                x:Name="LB_cokol"
+                Grid.Row="4"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Margin="247,132,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Цоколь"
+                Foreground="White" />
+                            <Label
+                x:Name="LB_fasade"
+                Grid.Row="4"
+                Grid.Column="1"
+                Margin="215,346,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Фасад"
+                Foreground="White" />
+                            <Label
+                x:Name="LB_pavers"
+                Grid.Row="4"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Margin="251,346,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Брусчатска"
+                Foreground="White" />
+                            <Label
+                x:Name="LB_window"
+                Grid.Row="4"
+                Grid.Column="1"
+                Margin="215,534,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Окно"
+                Foreground="White" />
+                            <Label
+                x:Name="LB_drain"
+                Grid.Row="4"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Margin="267,534,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Водостоки"
+                Foreground="White" />
+                        </Grid>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+        <Grid 
+                            Background="Black" 
+                            VerticalAlignment="Top">
+            <Label
+                                x:Name="LB_BuyingHouse"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Content="{Binding Path=Name}"
+                                FontSize="40"
+                                FontWeight="Bold"
+                                Foreground="White" />
+            <Button
+                x:Name="btnback"
+                Width="Auto"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Click="btnback_Click"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Cursor="Hand">
+                <materialDesign:PackIcon 
+                                Kind="ArrowLeft" 
+                                Foreground="White"
+                                Width="40"
+                                Height="40"
+                                VerticalAlignment="Center"/>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

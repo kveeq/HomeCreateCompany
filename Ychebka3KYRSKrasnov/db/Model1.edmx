@@ -1,0 +1,1886 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище DataBaseHomeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Auth">
+          <Key>
+            <PropertyRef Name="ID_Person" />
+          </Key>
+          <Property Name="Login" Type="nvarchar" MaxLength="15" />
+          <Property Name="Password" Type="nvarchar" MaxLength="15" />
+          <Property Name="ID_Role" Type="int" />
+          <Property Name="ID_Person" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Balki_House">
+          <Key>
+            <PropertyRef Name="ID_Balka" />
+          </Key>
+          <Property Name="ID_Balka" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Color_Balka" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image_Balka" Type="image" />
+          <Property Name="Price_Balka" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Door_For_House">
+          <Key>
+            <PropertyRef Name="ID_Door" />
+          </Key>
+          <Property Name="ID_Door" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Door_Color" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image_Dooor" Type="image" />
+          <Property Name="Price_Door" Type="int" />
+        </EntityType>
+        <EntityType Name="Drain_For_Home">
+          <Key>
+            <PropertyRef Name="ID_Drain" />
+          </Key>
+          <Property Name="ID_Drain" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Drain_Color" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image_Drain" Type="image" />
+          <Property Name="Price_Drain" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Home">
+          <Key>
+            <PropertyRef Name="ID_Home" />
+          </Key>
+          <Property Name="ID_Home" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="15" />
+          <Property Name="Opisanie" Type="nvarchar" MaxLength="100" />
+          <Property Name="Image_Home" Type="image" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Home_Balki">
+          <Key>
+            <PropertyRef Name="ID_HB" />
+          </Key>
+          <Property Name="ID_HB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Balka" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home_Cokol">
+          <Key>
+            <PropertyRef Name="ID_HC" />
+          </Key>
+          <Property Name="ID_HC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Basement" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home_Door">
+          <Key>
+            <PropertyRef Name="ID_HD" />
+          </Key>
+          <Property Name="ID_HD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Door" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home_Drain">
+          <Key>
+            <PropertyRef Name="ID_HDR" />
+          </Key>
+          <Property Name="ID_HDR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Drain" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home_Fasad">
+          <Key>
+            <PropertyRef Name="ID_HF" />
+          </Key>
+          <Property Name="ID_HF" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Facade" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home_Pavers">
+          <Key>
+            <PropertyRef Name="ID_HP" />
+          </Key>
+          <Property Name="ID_HP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Pavers" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home_Plaster">
+          <Key>
+            <PropertyRef Name="ID_HPL" />
+          </Key>
+          <Property Name="ID_HPL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Plaster" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home_Railing">
+          <Key>
+            <PropertyRef Name="ID_RH" />
+          </Key>
+          <Property Name="ID_RH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Railing" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home_Roof">
+          <Key>
+            <PropertyRef Name="ID_HROOF" />
+          </Key>
+          <Property Name="ID_HROOF" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Roof" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home_Solution">
+          <Key>
+            <PropertyRef Name="ID_HS" />
+          </Key>
+          <Property Name="ID_HS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Solution" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home_Steps">
+          <Key>
+            <PropertyRef Name="ID_HS" />
+          </Key>
+          <Property Name="ID_HS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Steps" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home_Terrace">
+          <Key>
+            <PropertyRef Name="ID_HT" />
+          </Key>
+          <Property Name="ID_HT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Terrace" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home_Window">
+          <Key>
+            <PropertyRef Name="ID_HW" />
+          </Key>
+          <Property Name="ID_HW" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Window" Type="int" Nullable="false" />
+          <Property Name="ID_Home" Type="int" />
+        </EntityType>
+        <EntityType Name="House_Basement(Cokol)">
+          <Key>
+            <PropertyRef Name="ID_Basement" />
+          </Key>
+          <Property Name="ID_Basement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Basement_Color" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image_Basement" Type="image" />
+          <Property Name="Price_Basement" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="House_Facade">
+          <Key>
+            <PropertyRef Name="ID_Facade" />
+          </Key>
+          <Property Name="ID_Facade" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Facade_Color" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image_Facade" Type="image" />
+          <Property Name="Price_Facade" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="House_Steps">
+          <Key>
+            <PropertyRef Name="ID_Steps" />
+          </Key>
+          <Property Name="ID_Steps" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Steps_Color" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image_Steps" Type="image" />
+          <Property Name="Price_Steps" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="House_Windows">
+          <Key>
+            <PropertyRef Name="ID_Window" />
+          </Key>
+          <Property Name="ID_Window" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Window_Color" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image_Window" Type="image" />
+          <Property Name="Price_Roof" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Pavers_House">
+          <Key>
+            <PropertyRef Name="ID_Pavers" />
+          </Key>
+          <Property Name="ID_Pavers" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pavers_Color" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image_Pavers" Type="image" />
+          <Property Name="Price_Pavers" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="ID_Person" />
+          </Key>
+          <Property Name="ID_Person" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="15" />
+          <Property Name="Phone" Type="decimal" Precision="11" Scale="0" />
+          <Property Name="Email" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Plaster_for_the_house">
+          <Key>
+            <PropertyRef Name="ID_Plaster" />
+          </Key>
+          <Property Name="ID_Plaster" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Color_Plaster" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image_Plaster" Type="image" />
+          <Property Name="Price_Plaster" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Railing_For_Home">
+          <Key>
+            <PropertyRef Name="ID_Railing" />
+          </Key>
+          <Property Name="ID_Railing" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Color_Railing" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image_Railing" Type="image" />
+          <Property Name="Price_Railing" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID_Role" />
+          </Key>
+          <Property Name="ID_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Roof of the house">
+          <Key>
+            <PropertyRef Name="ID_Roof" />
+          </Key>
+          <Property Name="ID_Roof" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Roof_Color" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image_Roof" Type="image" />
+          <Property Name="Price_Roof" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Terrace_Home">
+          <Key>
+            <PropertyRef Name="ID_Terrace" />
+          </Key>
+          <Property Name="ID_Terrace" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Material_Terrace" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image_Terrace" Type="image" />
+          <Property Name="Price_Terrace" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Turnkey_solution_for_home">
+          <Key>
+            <PropertyRef Name="ID_Solution" />
+          </Key>
+          <Property Name="ID_Solution" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="image" />
+          <Property Name="Price_Solution" Type="decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <Association Name="FK_Auth_Person1">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Auth" Type="Self.Auth" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID_Person" />
+            </Principal>
+            <Dependent Role="Auth">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auth_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="Auth">
+              <PropertyRef Name="ID_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Balki_Balki_House">
+          <End Role="Balki_House" Type="Self.Balki_House" Multiplicity="1" />
+          <End Role="Home_Balki" Type="Self.Home_Balki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Balki_House">
+              <PropertyRef Name="ID_Balka" />
+            </Principal>
+            <Dependent Role="Home_Balki">
+              <PropertyRef Name="ID_Balka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Balki_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Balki" Type="Self.Home_Balki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Balki">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Cokol_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Cokol" Type="Self.Home_Cokol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Cokol">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Cokol_House_Basement(Cokol)">
+          <End Role="House_Basement(Cokol)" Type="Self.House_Basement(Cokol)" Multiplicity="1" />
+          <End Role="Home_Cokol" Type="Self.Home_Cokol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House_Basement(Cokol)">
+              <PropertyRef Name="ID_Basement" />
+            </Principal>
+            <Dependent Role="Home_Cokol">
+              <PropertyRef Name="ID_Basement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Door_Door_For_House">
+          <End Role="Door_For_House" Type="Self.Door_For_House" Multiplicity="1" />
+          <End Role="Home_Door" Type="Self.Home_Door" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Door_For_House">
+              <PropertyRef Name="ID_Door" />
+            </Principal>
+            <Dependent Role="Home_Door">
+              <PropertyRef Name="ID_Door" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Door_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Door" Type="Self.Home_Door" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Door">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Drain_Drain_For_Home">
+          <End Role="Drain_For_Home" Type="Self.Drain_For_Home" Multiplicity="1" />
+          <End Role="Home_Drain" Type="Self.Home_Drain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drain_For_Home">
+              <PropertyRef Name="ID_Drain" />
+            </Principal>
+            <Dependent Role="Home_Drain">
+              <PropertyRef Name="ID_Drain" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Drain_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Drain" Type="Self.Home_Drain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Drain">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Fasad_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Fasad" Type="Self.Home_Fasad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Fasad">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Fasad_House_Facade">
+          <End Role="House_Facade" Type="Self.House_Facade" Multiplicity="1" />
+          <End Role="Home_Fasad" Type="Self.Home_Fasad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House_Facade">
+              <PropertyRef Name="ID_Facade" />
+            </Principal>
+            <Dependent Role="Home_Fasad">
+              <PropertyRef Name="ID_Facade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Pavers_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Pavers" Type="Self.Home_Pavers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Pavers">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Pavers_Pavers_House">
+          <End Role="Pavers_House" Type="Self.Pavers_House" Multiplicity="1" />
+          <End Role="Home_Pavers" Type="Self.Home_Pavers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pavers_House">
+              <PropertyRef Name="ID_Pavers" />
+            </Principal>
+            <Dependent Role="Home_Pavers">
+              <PropertyRef Name="ID_Pavers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Plaster_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Plaster" Type="Self.Home_Plaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Plaster">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Plaster_Plaster_for_the_house">
+          <End Role="Plaster_for_the_house" Type="Self.Plaster_for_the_house" Multiplicity="1" />
+          <End Role="Home_Plaster" Type="Self.Home_Plaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plaster_for_the_house">
+              <PropertyRef Name="ID_Plaster" />
+            </Principal>
+            <Dependent Role="Home_Plaster">
+              <PropertyRef Name="ID_Plaster" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Railing_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Railing" Type="Self.Home_Railing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Railing">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Railing_Railing_For_Home">
+          <End Role="Railing_For_Home" Type="Self.Railing_For_Home" Multiplicity="1" />
+          <End Role="Home_Railing" Type="Self.Home_Railing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Railing_For_Home">
+              <PropertyRef Name="ID_Railing" />
+            </Principal>
+            <Dependent Role="Home_Railing">
+              <PropertyRef Name="ID_Railing" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Roof_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Roof" Type="Self.Home_Roof" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Roof">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Roof_Roof of the house">
+          <End Role="Roof of the house" Type="Self.Roof of the house" Multiplicity="1" />
+          <End Role="Home_Roof" Type="Self.Home_Roof" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roof of the house">
+              <PropertyRef Name="ID_Roof" />
+            </Principal>
+            <Dependent Role="Home_Roof">
+              <PropertyRef Name="ID_Roof" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Solution_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Solution" Type="Self.Home_Solution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Solution">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Solution_Turnkey_solution_for_home">
+          <End Role="Turnkey_solution_for_home" Type="Self.Turnkey_solution_for_home" Multiplicity="1" />
+          <End Role="Home_Solution" Type="Self.Home_Solution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turnkey_solution_for_home">
+              <PropertyRef Name="ID_Solution" />
+            </Principal>
+            <Dependent Role="Home_Solution">
+              <PropertyRef Name="ID_Solution" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Steps_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Steps" Type="Self.Home_Steps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Steps">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Steps_House_Steps">
+          <End Role="House_Steps" Type="Self.House_Steps" Multiplicity="1" />
+          <End Role="Home_Steps" Type="Self.Home_Steps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House_Steps">
+              <PropertyRef Name="ID_Steps" />
+            </Principal>
+            <Dependent Role="Home_Steps">
+              <PropertyRef Name="ID_Steps" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Terrace_Home1">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Terrace" Type="Self.Home_Terrace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Terrace">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Terrace_Terrace_Home">
+          <End Role="Terrace_Home" Type="Self.Terrace_Home" Multiplicity="1" />
+          <End Role="Home_Terrace" Type="Self.Home_Terrace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Terrace_Home">
+              <PropertyRef Name="ID_Terrace" />
+            </Principal>
+            <Dependent Role="Home_Terrace">
+              <PropertyRef Name="ID_Terrace" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Window_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="0..1" />
+          <End Role="Home_Window" Type="Self.Home_Window" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Window">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Window_House_Windows">
+          <End Role="House_Windows" Type="Self.House_Windows" Multiplicity="1" />
+          <End Role="Home_Window" Type="Self.Home_Window" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House_Windows">
+              <PropertyRef Name="ID_Window" />
+            </Principal>
+            <Dependent Role="Home_Window">
+              <PropertyRef Name="ID_Window" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище DataBaseHomeModelContainer">
+          <EntitySet Name="Auth" EntityType="Self.Auth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Balki_House" EntityType="Self.Balki_House" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Door_For_House" EntityType="Self.Door_For_House" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drain_For_Home" EntityType="Self.Drain_For_Home" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home" EntityType="Self.Home" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Balki" EntityType="Self.Home_Balki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Cokol" EntityType="Self.Home_Cokol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Door" EntityType="Self.Home_Door" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Drain" EntityType="Self.Home_Drain" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Fasad" EntityType="Self.Home_Fasad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Pavers" EntityType="Self.Home_Pavers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Plaster" EntityType="Self.Home_Plaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Railing" EntityType="Self.Home_Railing" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Roof" EntityType="Self.Home_Roof" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Solution" EntityType="Self.Home_Solution" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Steps" EntityType="Self.Home_Steps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Terrace" EntityType="Self.Home_Terrace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home_Window" EntityType="Self.Home_Window" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="House_Basement(Cokol)" EntityType="Self.House_Basement(Cokol)" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="House_Facade" EntityType="Self.House_Facade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="House_Steps" EntityType="Self.House_Steps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="House_Windows" EntityType="Self.House_Windows" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pavers_House" EntityType="Self.Pavers_House" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Plaster_for_the_house" EntityType="Self.Plaster_for_the_house" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Railing_For_Home" EntityType="Self.Railing_For_Home" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roof of the house" EntityType="Self.Roof of the house" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Terrace_Home" EntityType="Self.Terrace_Home" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Turnkey_solution_for_home" EntityType="Self.Turnkey_solution_for_home" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Auth_Person1" Association="Self.FK_Auth_Person1">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Auth" EntitySet="Auth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auth_Role" Association="Self.FK_Auth_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Auth" EntitySet="Auth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Balki_Balki_House" Association="Self.FK_Home_Balki_Balki_House">
+            <End Role="Balki_House" EntitySet="Balki_House" />
+            <End Role="Home_Balki" EntitySet="Home_Balki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Balki_Home" Association="Self.FK_Home_Balki_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Balki" EntitySet="Home_Balki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Cokol_Home" Association="Self.FK_Home_Cokol_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Cokol" EntitySet="Home_Cokol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Cokol_House_Basement(Cokol)" Association="Self.FK_Home_Cokol_House_Basement(Cokol)">
+            <End Role="House_Basement(Cokol)" EntitySet="House_Basement(Cokol)" />
+            <End Role="Home_Cokol" EntitySet="Home_Cokol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Door_Door_For_House" Association="Self.FK_Home_Door_Door_For_House">
+            <End Role="Door_For_House" EntitySet="Door_For_House" />
+            <End Role="Home_Door" EntitySet="Home_Door" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Door_Home" Association="Self.FK_Home_Door_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Door" EntitySet="Home_Door" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Drain_Drain_For_Home" Association="Self.FK_Home_Drain_Drain_For_Home">
+            <End Role="Drain_For_Home" EntitySet="Drain_For_Home" />
+            <End Role="Home_Drain" EntitySet="Home_Drain" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Drain_Home" Association="Self.FK_Home_Drain_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Drain" EntitySet="Home_Drain" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Fasad_Home" Association="Self.FK_Home_Fasad_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Fasad" EntitySet="Home_Fasad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Fasad_House_Facade" Association="Self.FK_Home_Fasad_House_Facade">
+            <End Role="House_Facade" EntitySet="House_Facade" />
+            <End Role="Home_Fasad" EntitySet="Home_Fasad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Pavers_Home" Association="Self.FK_Home_Pavers_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Pavers" EntitySet="Home_Pavers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Pavers_Pavers_House" Association="Self.FK_Home_Pavers_Pavers_House">
+            <End Role="Pavers_House" EntitySet="Pavers_House" />
+            <End Role="Home_Pavers" EntitySet="Home_Pavers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Plaster_Home" Association="Self.FK_Home_Plaster_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Plaster" EntitySet="Home_Plaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Plaster_Plaster_for_the_house" Association="Self.FK_Home_Plaster_Plaster_for_the_house">
+            <End Role="Plaster_for_the_house" EntitySet="Plaster_for_the_house" />
+            <End Role="Home_Plaster" EntitySet="Home_Plaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Railing_Home" Association="Self.FK_Home_Railing_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Railing" EntitySet="Home_Railing" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Railing_Railing_For_Home" Association="Self.FK_Home_Railing_Railing_For_Home">
+            <End Role="Railing_For_Home" EntitySet="Railing_For_Home" />
+            <End Role="Home_Railing" EntitySet="Home_Railing" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Roof_Home" Association="Self.FK_Home_Roof_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Roof" EntitySet="Home_Roof" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Roof_Roof of the house" Association="Self.FK_Home_Roof_Roof of the house">
+            <End Role="Roof of the house" EntitySet="Roof of the house" />
+            <End Role="Home_Roof" EntitySet="Home_Roof" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Solution_Home" Association="Self.FK_Home_Solution_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Solution" EntitySet="Home_Solution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Solution_Turnkey_solution_for_home" Association="Self.FK_Home_Solution_Turnkey_solution_for_home">
+            <End Role="Turnkey_solution_for_home" EntitySet="Turnkey_solution_for_home" />
+            <End Role="Home_Solution" EntitySet="Home_Solution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Steps_Home" Association="Self.FK_Home_Steps_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Steps" EntitySet="Home_Steps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Steps_House_Steps" Association="Self.FK_Home_Steps_House_Steps">
+            <End Role="House_Steps" EntitySet="House_Steps" />
+            <End Role="Home_Steps" EntitySet="Home_Steps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Terrace_Home1" Association="Self.FK_Home_Terrace_Home1">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Terrace" EntitySet="Home_Terrace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Terrace_Terrace_Home" Association="Self.FK_Home_Terrace_Terrace_Home">
+            <End Role="Terrace_Home" EntitySet="Terrace_Home" />
+            <End Role="Home_Terrace" EntitySet="Home_Terrace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Window_Home" Association="Self.FK_Home_Window_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Window" EntitySet="Home_Window" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Window_House_Windows" Association="Self.FK_Home_Window_House_Windows">
+            <End Role="House_Windows" EntitySet="House_Windows" />
+            <End Role="Home_Window" EntitySet="Home_Window" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataBaseHomeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Auth">
+          <Key>
+            <PropertyRef Name="ID_Person" />
+          </Key>
+          <Property Name="Login" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Role" Type="Int32" />
+          <Property Name="ID_Person" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_Auth_Person1" FromRole="Auth" ToRole="Person" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Auth_Role" FromRole="Auth" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="Balki_House">
+          <Key>
+            <PropertyRef Name="ID_Balka" />
+          </Key>
+          <Property Name="ID_Balka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Color_Balka" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Balka" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Balka" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Home_Balki" Relationship="Self.FK_Home_Balki_Balki_House" FromRole="Balki_House" ToRole="Home_Balki" />
+        </EntityType>
+        <EntityType Name="Door_For_House">
+          <Key>
+            <PropertyRef Name="ID_Door" />
+          </Key>
+          <Property Name="ID_Door" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Door_Color" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Dooor" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Door" Type="Int32" />
+          <NavigationProperty Name="Home_Door" Relationship="Self.FK_Home_Door_Door_For_House" FromRole="Door_For_House" ToRole="Home_Door" />
+        </EntityType>
+        <EntityType Name="Drain_For_Home">
+          <Key>
+            <PropertyRef Name="ID_Drain" />
+          </Key>
+          <Property Name="ID_Drain" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Drain_Color" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Drain" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Drain" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Home_Drain" Relationship="Self.FK_Home_Drain_Drain_For_Home" FromRole="Drain_For_Home" ToRole="Home_Drain" />
+        </EntityType>
+        <EntityType Name="Home">
+          <Key>
+            <PropertyRef Name="ID_Home" />
+          </Key>
+          <Property Name="ID_Home" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Opisanie" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Home" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Home_Balki" Relationship="Self.FK_Home_Balki_Home" FromRole="Home" ToRole="Home_Balki" />
+          <NavigationProperty Name="Home_Cokol" Relationship="Self.FK_Home_Cokol_Home" FromRole="Home" ToRole="Home_Cokol" />
+          <NavigationProperty Name="Home_Door" Relationship="Self.FK_Home_Door_Home" FromRole="Home" ToRole="Home_Door" />
+          <NavigationProperty Name="Home_Drain" Relationship="Self.FK_Home_Drain_Home" FromRole="Home" ToRole="Home_Drain" />
+          <NavigationProperty Name="Home_Fasad" Relationship="Self.FK_Home_Fasad_Home" FromRole="Home" ToRole="Home_Fasad" />
+          <NavigationProperty Name="Home_Pavers" Relationship="Self.FK_Home_Pavers_Home" FromRole="Home" ToRole="Home_Pavers" />
+          <NavigationProperty Name="Home_Plaster" Relationship="Self.FK_Home_Plaster_Home" FromRole="Home" ToRole="Home_Plaster" />
+          <NavigationProperty Name="Home_Railing" Relationship="Self.FK_Home_Railing_Home" FromRole="Home" ToRole="Home_Railing" />
+          <NavigationProperty Name="Home_Roof" Relationship="Self.FK_Home_Roof_Home" FromRole="Home" ToRole="Home_Roof" />
+          <NavigationProperty Name="Home_Solution" Relationship="Self.FK_Home_Solution_Home" FromRole="Home" ToRole="Home_Solution" />
+          <NavigationProperty Name="Home_Steps" Relationship="Self.FK_Home_Steps_Home" FromRole="Home" ToRole="Home_Steps" />
+          <NavigationProperty Name="Home_Terrace" Relationship="Self.FK_Home_Terrace_Home1" FromRole="Home" ToRole="Home_Terrace" />
+          <NavigationProperty Name="Home_Window" Relationship="Self.FK_Home_Window_Home" FromRole="Home" ToRole="Home_Window" />
+        </EntityType>
+        <EntityType Name="Home_Balki">
+          <Key>
+            <PropertyRef Name="ID_HB" />
+          </Key>
+          <Property Name="ID_HB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Balka" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Balki_House" Relationship="Self.FK_Home_Balki_Balki_House" FromRole="Home_Balki" ToRole="Balki_House" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Balki_Home" FromRole="Home_Balki" ToRole="Home" />
+        </EntityType>
+        <EntityType Name="Home_Cokol">
+          <Key>
+            <PropertyRef Name="ID_HC" />
+          </Key>
+          <Property Name="ID_HC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Basement" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Cokol_Home" FromRole="Home_Cokol" ToRole="Home" />
+          <NavigationProperty Name="House_Basement_Cokol_" Relationship="Self.FK_Home_Cokol_House_Basement_Cokol_" FromRole="Home_Cokol" ToRole="House_Basement_Cokol_" />
+        </EntityType>
+        <EntityType Name="Home_Door">
+          <Key>
+            <PropertyRef Name="ID_HD" />
+          </Key>
+          <Property Name="ID_HD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Door" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Door_For_House" Relationship="Self.FK_Home_Door_Door_For_House" FromRole="Home_Door" ToRole="Door_For_House" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Door_Home" FromRole="Home_Door" ToRole="Home" />
+        </EntityType>
+        <EntityType Name="Home_Drain">
+          <Key>
+            <PropertyRef Name="ID_HDR" />
+          </Key>
+          <Property Name="ID_HDR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Drain" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Drain_For_Home" Relationship="Self.FK_Home_Drain_Drain_For_Home" FromRole="Home_Drain" ToRole="Drain_For_Home" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Drain_Home" FromRole="Home_Drain" ToRole="Home" />
+        </EntityType>
+        <EntityType Name="Home_Fasad">
+          <Key>
+            <PropertyRef Name="ID_HF" />
+          </Key>
+          <Property Name="ID_HF" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Facade" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Fasad_Home" FromRole="Home_Fasad" ToRole="Home" />
+          <NavigationProperty Name="House_Facade" Relationship="Self.FK_Home_Fasad_House_Facade" FromRole="Home_Fasad" ToRole="House_Facade" />
+        </EntityType>
+        <EntityType Name="Home_Pavers">
+          <Key>
+            <PropertyRef Name="ID_HP" />
+          </Key>
+          <Property Name="ID_HP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Pavers" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Pavers_Home" FromRole="Home_Pavers" ToRole="Home" />
+          <NavigationProperty Name="Pavers_House" Relationship="Self.FK_Home_Pavers_Pavers_House" FromRole="Home_Pavers" ToRole="Pavers_House" />
+        </EntityType>
+        <EntityType Name="Home_Plaster">
+          <Key>
+            <PropertyRef Name="ID_HPL" />
+          </Key>
+          <Property Name="ID_HPL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Plaster" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Plaster_Home" FromRole="Home_Plaster" ToRole="Home" />
+          <NavigationProperty Name="Plaster_for_the_house" Relationship="Self.FK_Home_Plaster_Plaster_for_the_house" FromRole="Home_Plaster" ToRole="Plaster_for_the_house" />
+        </EntityType>
+        <EntityType Name="Home_Railing">
+          <Key>
+            <PropertyRef Name="ID_RH" />
+          </Key>
+          <Property Name="ID_RH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Railing" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Railing_Home" FromRole="Home_Railing" ToRole="Home" />
+          <NavigationProperty Name="Railing_For_Home" Relationship="Self.FK_Home_Railing_Railing_For_Home" FromRole="Home_Railing" ToRole="Railing_For_Home" />
+        </EntityType>
+        <EntityType Name="Home_Roof">
+          <Key>
+            <PropertyRef Name="ID_HROOF" />
+          </Key>
+          <Property Name="ID_HROOF" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Roof" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Roof_Home" FromRole="Home_Roof" ToRole="Home" />
+          <NavigationProperty Name="Roof_of_the_house" Relationship="Self.FK_Home_Roof_Roof_of_the_house" FromRole="Home_Roof" ToRole="Roof_of_the_house" />
+        </EntityType>
+        <EntityType Name="Home_Solution">
+          <Key>
+            <PropertyRef Name="ID_HS" />
+          </Key>
+          <Property Name="ID_HS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Solution" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Solution_Home" FromRole="Home_Solution" ToRole="Home" />
+          <NavigationProperty Name="Turnkey_solution_for_home" Relationship="Self.FK_Home_Solution_Turnkey_solution_for_home" FromRole="Home_Solution" ToRole="Turnkey_solution_for_home" />
+        </EntityType>
+        <EntityType Name="Home_Steps">
+          <Key>
+            <PropertyRef Name="ID_HS" />
+          </Key>
+          <Property Name="ID_HS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Steps" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Steps_Home" FromRole="Home_Steps" ToRole="Home" />
+          <NavigationProperty Name="House_Steps" Relationship="Self.FK_Home_Steps_House_Steps" FromRole="Home_Steps" ToRole="House_Steps" />
+        </EntityType>
+        <EntityType Name="Home_Terrace">
+          <Key>
+            <PropertyRef Name="ID_HT" />
+          </Key>
+          <Property Name="ID_HT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Terrace" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Terrace_Home1" FromRole="Home_Terrace" ToRole="Home" />
+          <NavigationProperty Name="Terrace_Home" Relationship="Self.FK_Home_Terrace_Terrace_Home" FromRole="Home_Terrace" ToRole="Terrace_Home" />
+        </EntityType>
+        <EntityType Name="Home_Window">
+          <Key>
+            <PropertyRef Name="ID_HW" />
+          </Key>
+          <Property Name="ID_HW" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Window" Type="Int32" Nullable="false" />
+          <Property Name="ID_Home" Type="Int32" />
+          <NavigationProperty Name="Home" Relationship="Self.FK_Home_Window_Home" FromRole="Home_Window" ToRole="Home" />
+          <NavigationProperty Name="House_Windows" Relationship="Self.FK_Home_Window_House_Windows" FromRole="Home_Window" ToRole="House_Windows" />
+        </EntityType>
+        <EntityType Name="House_Basement_Cokol_">
+          <Key>
+            <PropertyRef Name="ID_Basement" />
+          </Key>
+          <Property Name="ID_Basement" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Basement_Color" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Basement" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Basement" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Home_Cokol" Relationship="Self.FK_Home_Cokol_House_Basement_Cokol_" FromRole="House_Basement_Cokol_" ToRole="Home_Cokol" />
+        </EntityType>
+        <EntityType Name="House_Facade">
+          <Key>
+            <PropertyRef Name="ID_Facade" />
+          </Key>
+          <Property Name="ID_Facade" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Facade_Color" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Facade" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Facade" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Home_Fasad" Relationship="Self.FK_Home_Fasad_House_Facade" FromRole="House_Facade" ToRole="Home_Fasad" />
+        </EntityType>
+        <EntityType Name="House_Steps">
+          <Key>
+            <PropertyRef Name="ID_Steps" />
+          </Key>
+          <Property Name="ID_Steps" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Steps_Color" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Steps" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Steps" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Home_Steps" Relationship="Self.FK_Home_Steps_House_Steps" FromRole="House_Steps" ToRole="Home_Steps" />
+        </EntityType>
+        <EntityType Name="House_Windows">
+          <Key>
+            <PropertyRef Name="ID_Window" />
+          </Key>
+          <Property Name="ID_Window" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Window_Color" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Window" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Roof" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Home_Window" Relationship="Self.FK_Home_Window_House_Windows" FromRole="House_Windows" ToRole="Home_Window" />
+        </EntityType>
+        <EntityType Name="Pavers_House">
+          <Key>
+            <PropertyRef Name="ID_Pavers" />
+          </Key>
+          <Property Name="ID_Pavers" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pavers_Color" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Pavers" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Pavers" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Home_Pavers" Relationship="Self.FK_Home_Pavers_Pavers_House" FromRole="Pavers_House" ToRole="Home_Pavers" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="ID_Person" />
+          </Key>
+          <Property Name="ID_Person" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="Email" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Auth" Relationship="Self.FK_Auth_Person1" FromRole="Person" ToRole="Auth" />
+        </EntityType>
+        <EntityType Name="Plaster_for_the_house">
+          <Key>
+            <PropertyRef Name="ID_Plaster" />
+          </Key>
+          <Property Name="ID_Plaster" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Color_Plaster" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Plaster" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Plaster" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Home_Plaster" Relationship="Self.FK_Home_Plaster_Plaster_for_the_house" FromRole="Plaster_for_the_house" ToRole="Home_Plaster" />
+        </EntityType>
+        <EntityType Name="Railing_For_Home">
+          <Key>
+            <PropertyRef Name="ID_Railing" />
+          </Key>
+          <Property Name="ID_Railing" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Color_Railing" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Railing" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Railing" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Home_Railing" Relationship="Self.FK_Home_Railing_Railing_For_Home" FromRole="Railing_For_Home" ToRole="Home_Railing" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID_Role" />
+          </Key>
+          <Property Name="ID_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Auth" Relationship="Self.FK_Auth_Role" FromRole="Role" ToRole="Auth" />
+        </EntityType>
+        <EntityType Name="Roof_of_the_house">
+          <Key>
+            <PropertyRef Name="ID_Roof" />
+          </Key>
+          <Property Name="ID_Roof" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Roof_Color" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Roof" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Roof" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Home_Roof" Relationship="Self.FK_Home_Roof_Roof_of_the_house" FromRole="Roof_of_the_house" ToRole="Home_Roof" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Terrace_Home">
+          <Key>
+            <PropertyRef Name="ID_Terrace" />
+          </Key>
+          <Property Name="ID_Terrace" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Material_Terrace" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Terrace" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Terrace" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Home_Terrace" Relationship="Self.FK_Home_Terrace_Terrace_Home" FromRole="Terrace_Home" ToRole="Home_Terrace" />
+        </EntityType>
+        <EntityType Name="Turnkey_solution_for_home">
+          <Key>
+            <PropertyRef Name="ID_Solution" />
+          </Key>
+          <Property Name="ID_Solution" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Price_Solution" Type="Decimal" Precision="18" Scale="3" />
+          <NavigationProperty Name="Home_Solution" Relationship="Self.FK_Home_Solution_Turnkey_solution_for_home" FromRole="Turnkey_solution_for_home" ToRole="Home_Solution" />
+        </EntityType>
+        <Association Name="FK_Auth_Person1">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Auth" Type="Self.Auth" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID_Person" />
+            </Principal>
+            <Dependent Role="Auth">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auth_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="Auth">
+              <PropertyRef Name="ID_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Balki_Balki_House">
+          <End Role="Balki_House" Type="Self.Balki_House" Multiplicity="1" />
+          <End Role="Home_Balki" Type="Self.Home_Balki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Balki_House">
+              <PropertyRef Name="ID_Balka" />
+            </Principal>
+            <Dependent Role="Home_Balki">
+              <PropertyRef Name="ID_Balka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Door_Door_For_House">
+          <End Role="Door_For_House" Type="Self.Door_For_House" Multiplicity="1" />
+          <End Role="Home_Door" Type="Self.Home_Door" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Door_For_House">
+              <PropertyRef Name="ID_Door" />
+            </Principal>
+            <Dependent Role="Home_Door">
+              <PropertyRef Name="ID_Door" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Drain_Drain_For_Home">
+          <End Role="Drain_For_Home" Type="Self.Drain_For_Home" Multiplicity="1" />
+          <End Role="Home_Drain" Type="Self.Home_Drain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drain_For_Home">
+              <PropertyRef Name="ID_Drain" />
+            </Principal>
+            <Dependent Role="Home_Drain">
+              <PropertyRef Name="ID_Drain" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Balki_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Balki" Type="Self.Home_Balki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Balki">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Cokol_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Cokol" Type="Self.Home_Cokol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Cokol">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Door_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Door" Type="Self.Home_Door" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Door">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Drain_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Drain" Type="Self.Home_Drain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Drain">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Fasad_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Fasad" Type="Self.Home_Fasad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Fasad">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Pavers_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Pavers" Type="Self.Home_Pavers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Pavers">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Plaster_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Plaster" Type="Self.Home_Plaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Plaster">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Railing_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Railing" Type="Self.Home_Railing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Railing">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Roof_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Roof" Type="Self.Home_Roof" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Roof">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Solution_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Solution" Type="Self.Home_Solution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Solution">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Steps_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Steps" Type="Self.Home_Steps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Steps">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Terrace_Home1">
+          <End Role="Home" Type="Self.Home" Multiplicity="1" />
+          <End Role="Home_Terrace" Type="Self.Home_Terrace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Terrace">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Window_Home">
+          <End Role="Home" Type="Self.Home" Multiplicity="0..1" />
+          <End Role="Home_Window" Type="Self.Home_Window" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID_Home" />
+            </Principal>
+            <Dependent Role="Home_Window">
+              <PropertyRef Name="ID_Home" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Cokol_House_Basement_Cokol_">
+          <End Role="House_Basement_Cokol_" Type="Self.House_Basement_Cokol_" Multiplicity="1" />
+          <End Role="Home_Cokol" Type="Self.Home_Cokol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House_Basement_Cokol_">
+              <PropertyRef Name="ID_Basement" />
+            </Principal>
+            <Dependent Role="Home_Cokol">
+              <PropertyRef Name="ID_Basement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Fasad_House_Facade">
+          <End Role="House_Facade" Type="Self.House_Facade" Multiplicity="1" />
+          <End Role="Home_Fasad" Type="Self.Home_Fasad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House_Facade">
+              <PropertyRef Name="ID_Facade" />
+            </Principal>
+            <Dependent Role="Home_Fasad">
+              <PropertyRef Name="ID_Facade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Pavers_Pavers_House">
+          <End Role="Pavers_House" Type="Self.Pavers_House" Multiplicity="1" />
+          <End Role="Home_Pavers" Type="Self.Home_Pavers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pavers_House">
+              <PropertyRef Name="ID_Pavers" />
+            </Principal>
+            <Dependent Role="Home_Pavers">
+              <PropertyRef Name="ID_Pavers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Plaster_Plaster_for_the_house">
+          <End Role="Plaster_for_the_house" Type="Self.Plaster_for_the_house" Multiplicity="1" />
+          <End Role="Home_Plaster" Type="Self.Home_Plaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plaster_for_the_house">
+              <PropertyRef Name="ID_Plaster" />
+            </Principal>
+            <Dependent Role="Home_Plaster">
+              <PropertyRef Name="ID_Plaster" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Railing_Railing_For_Home">
+          <End Role="Railing_For_Home" Type="Self.Railing_For_Home" Multiplicity="1" />
+          <End Role="Home_Railing" Type="Self.Home_Railing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Railing_For_Home">
+              <PropertyRef Name="ID_Railing" />
+            </Principal>
+            <Dependent Role="Home_Railing">
+              <PropertyRef Name="ID_Railing" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Roof_Roof_of_the_house">
+          <End Role="Roof_of_the_house" Type="Self.Roof_of_the_house" Multiplicity="1" />
+          <End Role="Home_Roof" Type="Self.Home_Roof" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roof_of_the_house">
+              <PropertyRef Name="ID_Roof" />
+            </Principal>
+            <Dependent Role="Home_Roof">
+              <PropertyRef Name="ID_Roof" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Solution_Turnkey_solution_for_home">
+          <End Role="Turnkey_solution_for_home" Type="Self.Turnkey_solution_for_home" Multiplicity="1" />
+          <End Role="Home_Solution" Type="Self.Home_Solution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turnkey_solution_for_home">
+              <PropertyRef Name="ID_Solution" />
+            </Principal>
+            <Dependent Role="Home_Solution">
+              <PropertyRef Name="ID_Solution" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Steps_House_Steps">
+          <End Role="House_Steps" Type="Self.House_Steps" Multiplicity="1" />
+          <End Role="Home_Steps" Type="Self.Home_Steps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House_Steps">
+              <PropertyRef Name="ID_Steps" />
+            </Principal>
+            <Dependent Role="Home_Steps">
+              <PropertyRef Name="ID_Steps" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Terrace_Terrace_Home">
+          <End Role="Terrace_Home" Type="Self.Terrace_Home" Multiplicity="1" />
+          <End Role="Home_Terrace" Type="Self.Home_Terrace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Terrace_Home">
+              <PropertyRef Name="ID_Terrace" />
+            </Principal>
+            <Dependent Role="Home_Terrace">
+              <PropertyRef Name="ID_Terrace" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Home_Window_House_Windows">
+          <End Role="House_Windows" Type="Self.House_Windows" Multiplicity="1" />
+          <End Role="Home_Window" Type="Self.Home_Window" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House_Windows">
+              <PropertyRef Name="ID_Window" />
+            </Principal>
+            <Dependent Role="Home_Window">
+              <PropertyRef Name="ID_Window" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DataBaseHomeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Auth" EntityType="Self.Auth" />
+          <EntitySet Name="Balki_House" EntityType="Self.Balki_House" />
+          <EntitySet Name="Door_For_House" EntityType="Self.Door_For_House" />
+          <EntitySet Name="Drain_For_Home" EntityType="Self.Drain_For_Home" />
+          <EntitySet Name="Home" EntityType="Self.Home" />
+          <EntitySet Name="Home_Balki" EntityType="Self.Home_Balki" />
+          <EntitySet Name="Home_Cokol" EntityType="Self.Home_Cokol" />
+          <EntitySet Name="Home_Door" EntityType="Self.Home_Door" />
+          <EntitySet Name="Home_Drain" EntityType="Self.Home_Drain" />
+          <EntitySet Name="Home_Fasad" EntityType="Self.Home_Fasad" />
+          <EntitySet Name="Home_Pavers" EntityType="Self.Home_Pavers" />
+          <EntitySet Name="Home_Plaster" EntityType="Self.Home_Plaster" />
+          <EntitySet Name="Home_Railing" EntityType="Self.Home_Railing" />
+          <EntitySet Name="Home_Roof" EntityType="Self.Home_Roof" />
+          <EntitySet Name="Home_Solution" EntityType="Self.Home_Solution" />
+          <EntitySet Name="Home_Steps" EntityType="Self.Home_Steps" />
+          <EntitySet Name="Home_Terrace" EntityType="Self.Home_Terrace" />
+          <EntitySet Name="Home_Window" EntityType="Self.Home_Window" />
+          <EntitySet Name="House_Basement_Cokol_" EntityType="Self.House_Basement_Cokol_" />
+          <EntitySet Name="House_Facade" EntityType="Self.House_Facade" />
+          <EntitySet Name="House_Steps" EntityType="Self.House_Steps" />
+          <EntitySet Name="House_Windows" EntityType="Self.House_Windows" />
+          <EntitySet Name="Pavers_House" EntityType="Self.Pavers_House" />
+          <EntitySet Name="Person" EntityType="Self.Person" />
+          <EntitySet Name="Plaster_for_the_house" EntityType="Self.Plaster_for_the_house" />
+          <EntitySet Name="Railing_For_Home" EntityType="Self.Railing_For_Home" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Roof_of_the_house" EntityType="Self.Roof_of_the_house" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Terrace_Home" EntityType="Self.Terrace_Home" />
+          <EntitySet Name="Turnkey_solution_for_home" EntityType="Self.Turnkey_solution_for_home" />
+          <AssociationSet Name="FK_Auth_Person1" Association="Self.FK_Auth_Person1">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Auth" EntitySet="Auth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auth_Role" Association="Self.FK_Auth_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Auth" EntitySet="Auth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Balki_Balki_House" Association="Self.FK_Home_Balki_Balki_House">
+            <End Role="Balki_House" EntitySet="Balki_House" />
+            <End Role="Home_Balki" EntitySet="Home_Balki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Door_Door_For_House" Association="Self.FK_Home_Door_Door_For_House">
+            <End Role="Door_For_House" EntitySet="Door_For_House" />
+            <End Role="Home_Door" EntitySet="Home_Door" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Drain_Drain_For_Home" Association="Self.FK_Home_Drain_Drain_For_Home">
+            <End Role="Drain_For_Home" EntitySet="Drain_For_Home" />
+            <End Role="Home_Drain" EntitySet="Home_Drain" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Balki_Home" Association="Self.FK_Home_Balki_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Balki" EntitySet="Home_Balki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Cokol_Home" Association="Self.FK_Home_Cokol_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Cokol" EntitySet="Home_Cokol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Door_Home" Association="Self.FK_Home_Door_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Door" EntitySet="Home_Door" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Drain_Home" Association="Self.FK_Home_Drain_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Drain" EntitySet="Home_Drain" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Fasad_Home" Association="Self.FK_Home_Fasad_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Fasad" EntitySet="Home_Fasad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Pavers_Home" Association="Self.FK_Home_Pavers_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Pavers" EntitySet="Home_Pavers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Plaster_Home" Association="Self.FK_Home_Plaster_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Plaster" EntitySet="Home_Plaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Railing_Home" Association="Self.FK_Home_Railing_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Railing" EntitySet="Home_Railing" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Roof_Home" Association="Self.FK_Home_Roof_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Roof" EntitySet="Home_Roof" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Solution_Home" Association="Self.FK_Home_Solution_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Solution" EntitySet="Home_Solution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Steps_Home" Association="Self.FK_Home_Steps_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Steps" EntitySet="Home_Steps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Terrace_Home1" Association="Self.FK_Home_Terrace_Home1">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Terrace" EntitySet="Home_Terrace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Window_Home" Association="Self.FK_Home_Window_Home">
+            <End Role="Home" EntitySet="Home" />
+            <End Role="Home_Window" EntitySet="Home_Window" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Cokol_House_Basement_Cokol_" Association="Self.FK_Home_Cokol_House_Basement_Cokol_">
+            <End Role="House_Basement_Cokol_" EntitySet="House_Basement_Cokol_" />
+            <End Role="Home_Cokol" EntitySet="Home_Cokol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Fasad_House_Facade" Association="Self.FK_Home_Fasad_House_Facade">
+            <End Role="House_Facade" EntitySet="House_Facade" />
+            <End Role="Home_Fasad" EntitySet="Home_Fasad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Pavers_Pavers_House" Association="Self.FK_Home_Pavers_Pavers_House">
+            <End Role="Pavers_House" EntitySet="Pavers_House" />
+            <End Role="Home_Pavers" EntitySet="Home_Pavers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Plaster_Plaster_for_the_house" Association="Self.FK_Home_Plaster_Plaster_for_the_house">
+            <End Role="Plaster_for_the_house" EntitySet="Plaster_for_the_house" />
+            <End Role="Home_Plaster" EntitySet="Home_Plaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Railing_Railing_For_Home" Association="Self.FK_Home_Railing_Railing_For_Home">
+            <End Role="Railing_For_Home" EntitySet="Railing_For_Home" />
+            <End Role="Home_Railing" EntitySet="Home_Railing" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Roof_Roof_of_the_house" Association="Self.FK_Home_Roof_Roof_of_the_house">
+            <End Role="Roof_of_the_house" EntitySet="Roof_of_the_house" />
+            <End Role="Home_Roof" EntitySet="Home_Roof" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Solution_Turnkey_solution_for_home" Association="Self.FK_Home_Solution_Turnkey_solution_for_home">
+            <End Role="Turnkey_solution_for_home" EntitySet="Turnkey_solution_for_home" />
+            <End Role="Home_Solution" EntitySet="Home_Solution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Steps_House_Steps" Association="Self.FK_Home_Steps_House_Steps">
+            <End Role="House_Steps" EntitySet="House_Steps" />
+            <End Role="Home_Steps" EntitySet="Home_Steps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Terrace_Terrace_Home" Association="Self.FK_Home_Terrace_Terrace_Home">
+            <End Role="Terrace_Home" EntitySet="Terrace_Home" />
+            <End Role="Home_Terrace" EntitySet="Home_Terrace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Home_Window_House_Windows" Association="Self.FK_Home_Window_House_Windows">
+            <End Role="House_Windows" EntitySet="House_Windows" />
+            <End Role="Home_Window" EntitySet="Home_Window" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DataBaseHomeModelContainer" CdmEntityContainer="DataBaseHomeEntities">
+          <EntitySetMapping Name="Auth">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Auth">
+              <MappingFragment StoreEntitySet="Auth">
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+                <ScalarProperty Name="ID_Person" ColumnName="ID_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Balki_House">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Balki_House">
+              <MappingFragment StoreEntitySet="Balki_House">
+                <ScalarProperty Name="ID_Balka" ColumnName="ID_Balka" />
+                <ScalarProperty Name="Color_Balka" ColumnName="Color_Balka" />
+                <ScalarProperty Name="Image_Balka" ColumnName="Image_Balka" />
+                <ScalarProperty Name="Price_Balka" ColumnName="Price_Balka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Door_For_House">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Door_For_House">
+              <MappingFragment StoreEntitySet="Door_For_House">
+                <ScalarProperty Name="ID_Door" ColumnName="ID_Door" />
+                <ScalarProperty Name="Door_Color" ColumnName="Door_Color" />
+                <ScalarProperty Name="Image_Dooor" ColumnName="Image_Dooor" />
+                <ScalarProperty Name="Price_Door" ColumnName="Price_Door" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drain_For_Home">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Drain_For_Home">
+              <MappingFragment StoreEntitySet="Drain_For_Home">
+                <ScalarProperty Name="ID_Drain" ColumnName="ID_Drain" />
+                <ScalarProperty Name="Drain_Color" ColumnName="Drain_Color" />
+                <ScalarProperty Name="Image_Drain" ColumnName="Image_Drain" />
+                <ScalarProperty Name="Price_Drain" ColumnName="Price_Drain" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home">
+              <MappingFragment StoreEntitySet="Home">
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Opisanie" ColumnName="Opisanie" />
+                <ScalarProperty Name="Image_Home" ColumnName="Image_Home" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Balki">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Balki">
+              <MappingFragment StoreEntitySet="Home_Balki">
+                <ScalarProperty Name="ID_HB" ColumnName="ID_HB" />
+                <ScalarProperty Name="ID_Balka" ColumnName="ID_Balka" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Cokol">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Cokol">
+              <MappingFragment StoreEntitySet="Home_Cokol">
+                <ScalarProperty Name="ID_HC" ColumnName="ID_HC" />
+                <ScalarProperty Name="ID_Basement" ColumnName="ID_Basement" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Door">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Door">
+              <MappingFragment StoreEntitySet="Home_Door">
+                <ScalarProperty Name="ID_HD" ColumnName="ID_HD" />
+                <ScalarProperty Name="ID_Door" ColumnName="ID_Door" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Drain">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Drain">
+              <MappingFragment StoreEntitySet="Home_Drain">
+                <ScalarProperty Name="ID_HDR" ColumnName="ID_HDR" />
+                <ScalarProperty Name="ID_Drain" ColumnName="ID_Drain" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Fasad">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Fasad">
+              <MappingFragment StoreEntitySet="Home_Fasad">
+                <ScalarProperty Name="ID_HF" ColumnName="ID_HF" />
+                <ScalarProperty Name="ID_Facade" ColumnName="ID_Facade" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Pavers">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Pavers">
+              <MappingFragment StoreEntitySet="Home_Pavers">
+                <ScalarProperty Name="ID_HP" ColumnName="ID_HP" />
+                <ScalarProperty Name="ID_Pavers" ColumnName="ID_Pavers" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Plaster">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Plaster">
+              <MappingFragment StoreEntitySet="Home_Plaster">
+                <ScalarProperty Name="ID_HPL" ColumnName="ID_HPL" />
+                <ScalarProperty Name="ID_Plaster" ColumnName="ID_Plaster" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Railing">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Railing">
+              <MappingFragment StoreEntitySet="Home_Railing">
+                <ScalarProperty Name="ID_RH" ColumnName="ID_RH" />
+                <ScalarProperty Name="ID_Railing" ColumnName="ID_Railing" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Roof">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Roof">
+              <MappingFragment StoreEntitySet="Home_Roof">
+                <ScalarProperty Name="ID_HROOF" ColumnName="ID_HROOF" />
+                <ScalarProperty Name="ID_Roof" ColumnName="ID_Roof" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Solution">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Solution">
+              <MappingFragment StoreEntitySet="Home_Solution">
+                <ScalarProperty Name="ID_HS" ColumnName="ID_HS" />
+                <ScalarProperty Name="ID_Solution" ColumnName="ID_Solution" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Steps">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Steps">
+              <MappingFragment StoreEntitySet="Home_Steps">
+                <ScalarProperty Name="ID_HS" ColumnName="ID_HS" />
+                <ScalarProperty Name="ID_Steps" ColumnName="ID_Steps" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Terrace">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Terrace">
+              <MappingFragment StoreEntitySet="Home_Terrace">
+                <ScalarProperty Name="ID_HT" ColumnName="ID_HT" />
+                <ScalarProperty Name="ID_Terrace" ColumnName="ID_Terrace" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home_Window">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Home_Window">
+              <MappingFragment StoreEntitySet="Home_Window">
+                <ScalarProperty Name="ID_HW" ColumnName="ID_HW" />
+                <ScalarProperty Name="ID_Window" ColumnName="ID_Window" />
+                <ScalarProperty Name="ID_Home" ColumnName="ID_Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="House_Basement_Cokol_">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.House_Basement_Cokol_">
+              <MappingFragment StoreEntitySet="House_Basement(Cokol)">
+                <ScalarProperty Name="ID_Basement" ColumnName="ID_Basement" />
+                <ScalarProperty Name="Basement_Color" ColumnName="Basement_Color" />
+                <ScalarProperty Name="Image_Basement" ColumnName="Image_Basement" />
+                <ScalarProperty Name="Price_Basement" ColumnName="Price_Basement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="House_Facade">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.House_Facade">
+              <MappingFragment StoreEntitySet="House_Facade">
+                <ScalarProperty Name="ID_Facade" ColumnName="ID_Facade" />
+                <ScalarProperty Name="Facade_Color" ColumnName="Facade_Color" />
+                <ScalarProperty Name="Image_Facade" ColumnName="Image_Facade" />
+                <ScalarProperty Name="Price_Facade" ColumnName="Price_Facade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="House_Steps">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.House_Steps">
+              <MappingFragment StoreEntitySet="House_Steps">
+                <ScalarProperty Name="ID_Steps" ColumnName="ID_Steps" />
+                <ScalarProperty Name="Steps_Color" ColumnName="Steps_Color" />
+                <ScalarProperty Name="Image_Steps" ColumnName="Image_Steps" />
+                <ScalarProperty Name="Price_Steps" ColumnName="Price_Steps" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="House_Windows">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.House_Windows">
+              <MappingFragment StoreEntitySet="House_Windows">
+                <ScalarProperty Name="ID_Window" ColumnName="ID_Window" />
+                <ScalarProperty Name="Window_Color" ColumnName="Window_Color" />
+                <ScalarProperty Name="Image_Window" ColumnName="Image_Window" />
+                <ScalarProperty Name="Price_Roof" ColumnName="Price_Roof" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pavers_House">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Pavers_House">
+              <MappingFragment StoreEntitySet="Pavers_House">
+                <ScalarProperty Name="ID_Pavers" ColumnName="ID_Pavers" />
+                <ScalarProperty Name="Pavers_Color" ColumnName="Pavers_Color" />
+                <ScalarProperty Name="Image_Pavers" ColumnName="Image_Pavers" />
+                <ScalarProperty Name="Price_Pavers" ColumnName="Price_Pavers" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Person">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="ID_Person" ColumnName="ID_Person" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plaster_for_the_house">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Plaster_for_the_house">
+              <MappingFragment StoreEntitySet="Plaster_for_the_house">
+                <ScalarProperty Name="ID_Plaster" ColumnName="ID_Plaster" />
+                <ScalarProperty Name="Color_Plaster" ColumnName="Color_Plaster" />
+                <ScalarProperty Name="Image_Plaster" ColumnName="Image_Plaster" />
+                <ScalarProperty Name="Price_Plaster" ColumnName="Price_Plaster" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Railing_For_Home">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Railing_For_Home">
+              <MappingFragment StoreEntitySet="Railing_For_Home">
+                <ScalarProperty Name="ID_Railing" ColumnName="ID_Railing" />
+                <ScalarProperty Name="Color_Railing" ColumnName="Color_Railing" />
+                <ScalarProperty Name="Image_Railing" ColumnName="Image_Railing" />
+                <ScalarProperty Name="Price_Railing" ColumnName="Price_Railing" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roof_of_the_house">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Roof_of_the_house">
+              <MappingFragment StoreEntitySet="Roof of the house">
+                <ScalarProperty Name="ID_Roof" ColumnName="ID_Roof" />
+                <ScalarProperty Name="Roof_Color" ColumnName="Roof_Color" />
+                <ScalarProperty Name="Image_Roof" ColumnName="Image_Roof" />
+                <ScalarProperty Name="Price_Roof" ColumnName="Price_Roof" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Terrace_Home">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Terrace_Home">
+              <MappingFragment StoreEntitySet="Terrace_Home">
+                <ScalarProperty Name="ID_Terrace" ColumnName="ID_Terrace" />
+                <ScalarProperty Name="Material_Terrace" ColumnName="Material_Terrace" />
+                <ScalarProperty Name="Image_Terrace" ColumnName="Image_Terrace" />
+                <ScalarProperty Name="Price_Terrace" ColumnName="Price_Terrace" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Turnkey_solution_for_home">
+            <EntityTypeMapping TypeName="DataBaseHomeModel.Turnkey_solution_for_home">
+              <MappingFragment StoreEntitySet="Turnkey_solution_for_home">
+                <ScalarProperty Name="ID_Solution" ColumnName="ID_Solution" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Price_Solution" ColumnName="Price_Solution" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

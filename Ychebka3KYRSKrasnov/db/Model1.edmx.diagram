@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a3262c0b79f74b258a59cae4e5ea7c81" Name="Diagram1">
+        <EntityTypeShape EntityType="DataBaseHomeModel.Auth" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Balki_House" Width="1.5" PointX="0.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Door_For_House" Width="1.5" PointX="0.75" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Drain_For_Home" Width="1.5" PointX="3.75" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Balki" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Cokol" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Door" Width="1.5" PointX="3" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Drain" Width="1.5" PointX="6" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Fasad" Width="1.5" PointX="6" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Pavers" Width="1.5" PointX="6" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Plaster" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Railing" Width="1.5" PointX="3" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Roof" Width="1.5" PointX="9" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Solution" Width="1.5" PointX="6" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Steps" Width="1.5" PointX="6" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Terrace" Width="1.5" PointX="9" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Home_Window" Width="1.5" PointX="9" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.House_Basement_Cokol_" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.House_Facade" Width="1.5" PointX="3.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.House_Steps" Width="1.5" PointX="3.75" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.House_Windows" Width="1.5" PointX="6.75" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Pavers_House" Width="1.5" PointX="3.75" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Person" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Plaster_for_the_house" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Railing_For_Home" Width="1.5" PointX="0.75" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Role" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Roof_of_the_house" Width="1.5" PointX="6.75" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Terrace_Home" Width="1.5" PointX="6.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseHomeModel.Turnkey_solution_for_home" Width="1.5" PointX="3.75" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Auth_Person1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Auth_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Balki_Balki_House" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Door_Door_For_House" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Drain_Drain_For_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Balki_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Cokol_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Door_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Drain_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Fasad_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Pavers_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Plaster_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Railing_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Roof_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Solution_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Steps_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Terrace_Home1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Window_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Cokol_House_Basement_Cokol_" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Fasad_House_Facade" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Pavers_Pavers_House" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Plaster_Plaster_for_the_house" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Railing_Railing_For_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Roof_Roof_of_the_house" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Solution_Turnkey_solution_for_home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Steps_House_Steps" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Terrace_Terrace_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseHomeModel.FK_Home_Window_House_Windows" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
